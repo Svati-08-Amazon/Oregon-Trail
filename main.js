@@ -5,15 +5,18 @@ class Traveler {
     this.isHealthy = true;
   }
   hunt() {
-    this.food++;
-    this.food++;
-    // this.food += 2
+    this.food += 2;
   }
   eat() {
     if (this.food === 0) {
       this.isHealthy = false;
     } else {
       this.food -= 1;
+      // if (this.food < 1) {
+      //   this.isHealthy = this.food;
+      // } else {
+      //   this.isHealthy = false;
+      // }
     }
   }
 }
@@ -32,10 +35,10 @@ class Wagon {
   }
   shouldQuarantine() {
     for (let i = 0; i < this.passengers.length; i++) {
-      if (this.passengers[i].isHealthy === false) {
-        return true;
+      if (this.passengers[i].isHealthy === true) {
+        return false;
       }
-      return false;
+      return true;
     }
   }
 
